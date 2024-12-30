@@ -3,5 +3,5 @@ As discussed in the paper, the main result by [Bertsimas and Sim (2003)](https:/
 
 `python3 -m scripts.check_counterexample`
 
-in the main directory.
+from the main directory.
 Here, for each fixed leader's decision obtained from solving a bilevel sub-problem of the nominal type, all lower-level sub-problems are solved (cf. Lemma 1 in the paper) to determine whether the pair $(x,y)$ that is output as a solution of the bilevel sub-problem is $\Gamma$-robust feasible. Running the above script returns the message that there is no bilevel sub-problem for which the solution is $\Gamma$-robust feasible.
