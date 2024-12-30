@@ -154,5 +154,8 @@ from [the main directory](./) using the same arguments as specified in the neces
 
 Further details on this approach can also be found in Section 3.5 of the PhD thesis by Yasmine Beck.
 
+## Replicating
+The results of the computational study in [the paper](https://doi.org/10.1287/ijoc.2023.0239) can be replicated using the scripts and documentation provided in the [scripts directory](scripts).
+
 ## Results
 The figures and tables summarizing the results of the computational study in [the paper](https://doi.org/10.1287/ijoc.2023.0239) are provided in [figures_and_tables.pdf](results/figures_and_tables.pdf).
