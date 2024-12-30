@@ -20,7 +20,7 @@ https://doi.org/10.1287/ijoc.2023.0239.cd
 Below is the BibTex for citing this snapshot of the repository.
 
 ```
-@article{Beck_et_al:2025,
+@misc{Beck_et_al:2025,
   author =        {Yasmine Beck and Ivana Ljubić and Martin Schmidt},
   publisher =     {INFORMS Journal on Computing},
   title =         {{Heuristic Methods for $\Gamma$-Robust Mixed-Integer Linear Bilevel
@@ -36,7 +36,7 @@ Below is the BibTex for citing this snapshot of the repository.
 This repository contains the code accompanying the paper [Heuristic Methods for Gamma-Robust Mixed-Integer Linear Bilevel Problems](https://doi.org/10.1287/ijoc.2023.0239) by Yasmine Beck, Ivana Ljubić, and Martin Schmidt.
 
 ## Prerequisites  
-The methods are implemented in Python 3.7.11 and Gurobi 11.0.0 is used to solve all arising optimization problems. Visit [Gurobi's official website](https://www.gurobi.com/academia/academic-program-and-licenses) for details on how to obtain a license. In addition to Gurobi, the following Python packages and modules are required:
+The methods are implemented in `Python 3.7.11` and `Gurobi 11.0.0` is used to solve all arising optimization problems. Visit [Gurobi's official website](https://www.gurobi.com/academia/academic-program-and-licenses) for details on how to obtain a license. In addition to Gurobi, the following Python packages and modules are required:
 
 * argparse
 * json
@@ -87,7 +87,7 @@ A detailed description of the instance data format and the uncertainty parameter
 `--solver`  
 The solver to use for the solution of the problems of the nominal type. The default is the combinatorial approach (`--solver bkp`) by [Weninger and Fukasawa (2023)](https://link.springer.com/chapter/10.1007/978-3-031-32726-1_31). To use the branch-and-cut approach based on [Fischetti et al. (2019)](https://pubsonline.informs.org/doi/10.1287/ijoc.2018.0831), specify `--solver ic`.  
 
-To install the `bkpsolver` (`bkp`) by Weninger and Fukasawa (2023), follow the instructions at https://github.com/nwoeanhinnogaehr/bkpsolver. The best performance is achieved if the `bkpsolver` is located in the parent directory of this repository. Alternatively, you can modify the path to the solver in the `__init__` section of [min_max_heuristic.py](src/min_max_heuristic.py) to match its location.
+To install the `bkpsolver` by Weninger and Fukasawa (2023), follow the instructions at https://github.com/nwoeanhinnogaehr/bkpsolver. The best performance is achieved if the `bkpsolver` is located in the parent directory of this repository. Alternatively, you can modify the path to the solver in the `__init__` section of [min_max_heuristic.py](src/min_max_heuristic.py) to match its location.
 
 `--modify`  
 Use the modified variant of the heuristic in which all bilevel sub-problems are solved first (`True`) or use the variant that alternates between solving bilevel and single-level problems (`False`). The default is `False`.
@@ -135,7 +135,7 @@ To apply the ITERATE heuristic presented in [Fischetti et al. (2018)](https://do
 python3 -m src.iterate_heuristic --instance_file file.txt --conservatism conservatism_value --deviations deviation_values --output_file outfile.json
 ```
 
-from [the main directory](./) using the same arguments as specified in the `necessary arguments` section above. The default time limit is 3600 seconds. You can change it using the optional argument `--time_limit TL`, where TL is a scalar specifying the time limit in seconds.
+from [the main directory](./) using the same arguments as specified in the necessary arguments section above. The default time limit is 3600 seconds. You can change it using the optional argument `--time_limit TL`, where TL is a scalar specifying the time limit in seconds.
 
 To run the ONE-SHOT variant of the method presented in [Fischetti et al. (2018)](https://doi.org/10.1016/j.ejor.2017.11.043), add the optional argument
 
