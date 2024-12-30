@@ -48,11 +48,11 @@ The methods are implemented in `Python 3.7.11` and `Gurobi 11.0.0` is used to so
 Moreover, the heuristics use the `bkpsolver` presented in [Weninger and Fukasawa (2023)](https://link.springer.com/chapter/10.1007/978-3-031-32726-1_31). To install the `bkpsolver`, follow the instructions at https://github.com/nwoeanhinnogaehr/bkpsolver. 
 
 ## Usage  
-In the following, we elaborate on how to use the exact and heuristic approaches considered in the computational study of the [paper](https://doi.org/10.1287/ijoc.2023.0239). We distinguish between the min-max and the more general bilevel setting.  
+In the following, we elaborate on how to use the exact and heuristic approaches considered in the computational study of [the paper](https://doi.org/10.1287/ijoc.2023.0239). We distinguish between the min-max and the more general bilevel setting.  
 
 ## Approaches for $\Gamma$-Robust Min-Max Problems Applied to the $\Gamma$-Robust Knapsack Interdiction Problem  
 
-### 1. Heuristics Presented in the [Paper](https://doi.org/10.1287/ijoc.2023.0239)  
+### 1. Heuristics Presented in [the Paper](https://doi.org/10.1287/ijoc.2023.0239)  
 From [the main directory](./), run
 
 ```
@@ -69,7 +69,7 @@ The file containing the nominal instance data.
 Level of conservatism (in percent) must be a scalar between 0 and 1.
 
 `--output_file`  
-The file to write the output to.
+The .json file to write the output to.
 
 and either  
 
@@ -109,7 +109,7 @@ To apply the exact and problem-tailored branch-and-cut approach presented in [ou
 
 ## Approaches for General $\Gamma$-Robust Bilevel Problems Applied to the Generalized $\Gamma$-Robust Knapsack Interdiction Problem  
 
-### 1. Heuristics Presented in the [Paper](https://doi.org/10.1287/ijoc.2023.0239)  
+### 1. Heuristics Presented in [the Paper](https://doi.org/10.1287/ijoc.2023.0239)  
 From [the main directory](./), run
 
 ```
@@ -144,7 +144,7 @@ To run the ONE-SHOT variant of the method presented in [Fischetti et al. (2018)]
 ```
 
 ### 3. Exact and Problem-Tailored Branch-and-Cut Approach
-To apply the exact and problem-tailored branch-and-cut approach outlined in the [paper](https://doi.org/10.1287/ijoc.2023.0239), run
+To apply the exact and problem-tailored branch-and-cut approach outlined in [the paper](https://doi.org/10.1287/ijoc.2023.0239), run
 
 ```
 python3 -m src.gamma_robust_extended_model --instance_file file.txt --conservatism conservatism_value --deviations deviation_values --output_file outfile.json
