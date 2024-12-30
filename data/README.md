@@ -16,14 +16,14 @@ Nominal instance data is given as a dictionary in a simple text file. For exampl
 
 The deterministic instances that are used in the computational study of the paper are included in [this directory](./). Two classes of problems are considered:
 
-**knapsack interdiction problems**  
-For each instance size $n \in \{35, 40, 45, 50, 55, \dots, 100\}$, 10 instances of the knapsack interdiction problem have been generated according to [Martello et al. (1999)](https://pubsonline.informs.org/doi/10.1287/mnsc.45.3.414). The instances are named using the following format:
+**Knapsack Interdiction Problems**  
+For each instance size $n \in {35, 40, 45, 50, 55, \dots, 100}$, 10 instances of the knapsack interdiction problem have been generated according to [Martello et al. (1999)](https://pubsonline.informs.org/doi/10.1287/mnsc.45.3.414). The instances are named using the following format:
 
 ```
-BKIP_<n>_<i>.txt
+BKIP_<n>_<i>.txt,
 ```
 
-with
+where
 - `BKIP` stands for bilevel knapsack interdiction problem,  
 - `<n>` indicates the number of items (size of the problem),  
 - `<i>` is the instance number (an integer between 1 and 10).  
@@ -34,7 +34,7 @@ For example, the first out of 10 instances of the knapsack interdiction problem 
 BKIP_35_1.txt.
 ```  
 
-**generalized knapsack interdiction problems**  
+**Generalized Knapsack Interdiction Problems**  
 Instances of the generalized knapsack interdiction problem are obtained from the classic knapsack interdiction problem above by randomly generating and adding upper-level objective function coefficients for the leader's ("leader costs") and the follower's variables ("follower costs"). Instances of the generalized knapsack interdiction problem follow the same naming convention as the classic knapsack interdiction instances, with the addition of the prefix `generalized_`. An instance of the generalized knapsack interdiction problem could look as follows:
 
 ```
