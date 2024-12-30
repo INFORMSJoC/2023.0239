@@ -35,7 +35,7 @@ BKIP_35_1.txt.
 ```  
 
 **Generalized Knapsack Interdiction Problems**  
-Instances of the generalized knapsack interdiction problem are obtained from the classic knapsack interdiction problem above by randomly generating and adding upper-level objective function coefficients for the leader's (`leader costs`) and the follower's variables (`follower costs`). Instances of the generalized knapsack interdiction problem follow the same naming convention as the classic knapsack interdiction instances, with the addition of the prefix `generalized_`. An instance of the generalized knapsack interdiction problem could look as follows:
+Instances of the generalized knapsack interdiction problem have been obtained from the classic knapsack interdiction problem above by randomly generating and adding upper-level objective function coefficients for the leader's (`leader costs`) and the follower's variables (`follower costs`). Instances of the generalized knapsack interdiction problem follow the same naming convention as the classic knapsack interdiction instances, with the addition of the prefix `generalized_`. An instance of the generalized knapsack interdiction problem could look as follows:
 
 ```
 {  
