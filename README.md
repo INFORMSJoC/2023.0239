@@ -33,7 +33,7 @@ Below is the BibTex for citing this snapshot of the repository.
 ```
 
 ## Description  
-
+This repository contains the code accompanying the paper [Heuristic Methods for Gamma-Robust Mixed-Integer Linear Bilevel Problems](https://doi.org/10.1287/ijoc.2023.0239) by Yasmine Beck, Ivana Ljubić, and Martin Schmidt.
 
 ## Prerequisites  
 The methods are implemented in Python 3.7.11 and Gurobi 11.0.0 is used to solve all arising optimization problems. Visit [Gurobi's official website](https://www.gurobi.com/academia/academic-program-and-licenses) for details on how to obtain a license. In addition to Gurobi, the following Python packages and modules are required:
@@ -47,6 +47,9 @@ The methods are implemented in Python 3.7.11 and Gurobi 11.0.0 is used to solve 
 
 Moreover, the heuristics use the `bkpsolver` presented in [Weninger and Fukasawa (2023)](https://link.springer.com/chapter/10.1007/978-3-031-32726-1_31). To install the `bkpsolver`, follow the instructions at https://github.com/nwoeanhinnogaehr/bkpsolver. 
 
+## Usage  
+In the following, we elaborate on how to use the exact and heuristic approaches considered in the computational study of the [paper](https://doi.org/10.1287/ijoc.2023.0239). We distinguish between the min-max and the more general bilevel setting.  
+
 ## Approaches for $\Gamma$-Robust Min-Max Problems Applied to the $\Gamma$-Robust Knapsack Interdiction Problem  
 
 ### 1. Heuristics Presented in the [Paper](https://doi.org/10.1287/ijoc.2023.0239)  
@@ -59,53 +62,37 @@ python3 -m src.min_max_heuristic --instance_file file.txt --conservatism conserv
 to build a $\Gamma$-robust knapsack interdiction problem and solve it heuristically by solving a linear number of knapsack interdiction problems of the nominal type.
 
 #### Necessary arguments:
-```
---instance_file
-```
+`--instance_file`  
 The file containing the nominal instance data.
 
-```
---conservatism
-```  
+`--conservatism`  
 Level of conservatism (in percent) must be a scalar between 0 and 1.
 
-```
---output_file
-```
+`--output_file`  
 The file to write the output to.
 
 and either  
 
-```
---deviations
-```  
+`--deviations`  
 The deviations for the objective function coefficients, e.g., `1 2 1` for a problem of size 3.
 
 or  
 
-```
---uncertainty
-```  
+`--uncertainty`  
 Uncertainty value (in percent) must be a scalar between 0 and 1.  
 
 A detailed description of the instance data format and the uncertainty parameterization can be found in the [data directory](data).
 
 #### Optional arguments:  
-```
---solver
-```
-The solver to use for the solution of the problems of the nominal type. The default is the combinatorial approach (`--solver bkp`) by [Weninger and Fukasawa (2023)](https://link.springer.com/chapter/10.1007/978-3-031-32726-1_31). To use the branch-and-cut approach based on Fischetti et al. (2019), specify `--solver ic`.  
+`--solver`  
+The solver to use for the solution of the problems of the nominal type. The default is the combinatorial approach (`--solver bkp`) by [Weninger and Fukasawa (2023)](https://link.springer.com/chapter/10.1007/978-3-031-32726-1_31). To use the branch-and-cut approach based on [Fischetti et al. (2019)](https://pubsonline.informs.org/doi/10.1287/ijoc.2018.0831), specify `--solver ic`.  
 
 To install the `bkpsolver` (`bkp`) by Weninger and Fukasawa (2023), follow the instructions at https://github.com/nwoeanhinnogaehr/bkpsolver. The best performance is achieved if the `bkpsolver` is located in the parent directory of this repository. Alternatively, you can modify the path to the solver in the `__init__` section of [min_max_heuristic.py](src/min_max_heuristic.py) to match its location.
 
-```
---modify
-```
+`--modify`  
 Use the modified variant of the heuristic in which all bilevel sub-problems are solved first (`True`) or use the variant that alternates between solving bilevel and single-level problems (`False`). The default is `False`.
 
-```
---time_limit
-```
+`--time_limit`  
 The time limit in seconds. The default is 3600 seconds.
 
 ### 2. Greedy Interdiction Heuristic  
@@ -118,7 +105,7 @@ python3 -m src.greedy_interdiction --instance_file file.txt --conservatism conse
 from [the main directory](./) using the same arguments as specified in the necessary arguments section above.
 
 ### 3. Exact and Problem-Tailored Branch-and-Cut Approach
-To apply the exact and problem-tailored branch-and-cut approach presented in [our earlier work](https://link.springer.com/article/10.1007/s12532-023-00244-6), follow the instructions at https://github.com/YasmineBeck/gamma-robust-knapsack-interdiction-solver (10.5281/zenodo.7965281).
+To apply the exact and problem-tailored branch-and-cut approach presented in [our earlier work](https://link.springer.com/article/10.1007/s12532-023-00244-6), follow the instructions at https://github.com/YasmineBeck/gamma-robust-knapsack-interdiction-solver (DOI: 10.5281/zenodo.7965281).
 
 ## Approaches for General $\Gamma$-Robust Bilevel Problems Applied to the Generalized $\Gamma$-Robust Knapsack Interdiction Problem  
 
@@ -135,14 +122,10 @@ to build a generalized $\Gamma$-robust knapsack interdiction problem and solve i
 Same as for the min-max setting, see above.
 
 #### Optional arguments:
-```
---refine
-```
+`--refine`  
 Include a refinement step (`True`) to account for an optimistic follower or not (`False`). The default is `True`.
 
-```
---time_limit
-```
+`--time_limit`  
 The time limit in seconds. The default is 3600 seconds.
 
 ### 2. ONE-SHOT and ITERATE Heuristics  
